@@ -91,10 +91,10 @@ class InterventionsController < ApplicationController
       @intervention = Intervention.new(intervention_params)
 
         # Variables needed and used in the Zendesk API message
-        @intervention.author = current_employee.id
-        author_firstname = current_employee.first_name
-        author_lastname = current_employee.last_name
-        @customer_company = Customer.find(params[:customer]).company_name
+        @intervention.author = current_employee
+        # author_firstname = current_employee_id
+        # author_lastname = current_employee.last_name
+        # @customer_company = Customer.find(params[:column]).company_name
 
         # Rule to avoid an error message if no employee is selected
         if @intervention.employee_id != nil
@@ -106,7 +106,7 @@ class InterventionsController < ApplicationController
           added_details = ""
         end
 
-        # Content from the intervention form
+        #intervention
         @intervention.employee_id = params[:employee]
         @intervention.customer_id = params[:customer]
         @intervention.building_id = params[:building]
@@ -119,23 +119,23 @@ class InterventionsController < ApplicationController
       
     #==================================== Zendesk API session =============================================#  
       # Create a personalized ticket 
-      ZendeskAPI::Ticket.create!(@client, 
-        :subject => "Intervention ticket from employee ##{@intervention.author} - #{author_firstname} #{author_lastname} - Rocket Elevators",
-        :requester => {"name": @current_employee.email},
-        :comment => { :value => "Employee #{@intervention.author} (#{author_firstname} #{author_lastname}) working for customer #{@intervention.customer_id} (#{@customer_company}) on building  #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id} and elevator #{@intervention.elevator_id} has dispatched an employee (#{@intervention.employee_id}) to answer the present ticket.
-        *** An element with no value after a '#' means no specific element has been selected on the form ***
-        Here is a description of the intervention to be made : 
-        #{@intervention.report}  
-        #{added_details}
-        "}, 
-        :submitter_id => @intervention.author,
-        :type => "problem",
-        :priority => "urgent")
-    #==================================== END Zendesk API session =========================================# 
+    #   API::Ticket.create!(@client, 
+    #     :subject => "Intervention ticket from employee ##{@intervention.author} - #{author_firstname} #{author_lastname} - Rocket Elevators",
+    #     :requester => {"name": @current_employee.email},
+    #     :comment => { :value => "Employee #{@intervention.author} hello working for customer #{@intervention.customer_id} (#{@customer_company}) on building  #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id} and elevator #{@intervention.elevator_id} has dispatched an employee (#{@intervention.employee_id}) to answer the present ticket.
+    #     *** An element with no value after a '#' means no specific element has been selected on the form ***
+    #     Here is a description of the intervention to be made : 
+    #     #{@intervention.report}  
+    #     #{added_details}
+    #     "}, 
+    #     :submitter_id => @intervention.author,
+    #     :type => "problem",
+    #     :priority => "urgent")
+    #==================================== END  API session =========================================# 
   
       respond_to do |format|
         if @intervention.save!
-          format.html { redirect_to "/interventions" }
+          format.html { redirect_to "/index" }
           format.json { render :show, status: :created, location: @intervention }
           p @intervention
           p "coucou"

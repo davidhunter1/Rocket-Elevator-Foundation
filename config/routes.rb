@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'sign_up' => 'users#sign_up'
   get 'sign_in' => 'users#sign_in'
   get 'leads' => 'leads#new'
-
+  
   resources :interventions do
     get :get_building, on: :collection
     get :get_battery, on: :collection

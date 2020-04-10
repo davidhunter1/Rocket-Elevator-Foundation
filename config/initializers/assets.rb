@@ -34,7 +34,7 @@ Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/j
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.revolution.min.js )
 Rails.application.config.assets.precompile += %w( intervention.js )
 
-#reda add that
+
 Rails.application.config.assets.precompile += %w( demo.revolution_slider.js )
 
 

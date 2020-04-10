@@ -5,15 +5,15 @@ def initialize
   # Mandatory:
 
   # my Own zendesk 
-  config.url = "https://rocketelevators2020.zendesk.com/api/v2" # e.g. https://mydesk.zendesk.com/api/v2
+  config.url = "https://codeboxx.zendesk.com." # e.g. https://mydesk.zendesk.com/api/v2
   #config.url = "https://rocketelevator.zendesk.com/api/v2" # e.g. https://mydesk.zendesk.com/api/v2
 
   # Basic / Token Authentication
-  config.username = ENV["ZENDESK_API_USERNAME"]
+  config.username = "dhuntz65@gmail.com"
 
   # Choose one of the following depending on your authentication choice
-  config.token = ENV["ZENDESK_API_TOKEN"]
-  config.password = "Pin921521"
+  config.token = ENV["mKvGLqSG3dM5vxHDvOnMCgbYUNfnpA4yMS6PQtZh"]
+  
 
   # OAuth Authentication
   #config.access_token = "your OAuth access token"
