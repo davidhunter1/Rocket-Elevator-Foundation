@@ -10,6 +10,7 @@ class QuoteController < ApplicationController
     @quote = Quote.new(quote_params)
 
 #for creating a quote form submission ticket on zendesk panel
+#@quote para llamar desde la cotizacion
 ZendeskAPI::Ticket.create!(@client, 
   :subject => "#{@quote.Full_Name} from #{@quote.Company_Name}",
   :requester => {"name": @quote.Full_Name},

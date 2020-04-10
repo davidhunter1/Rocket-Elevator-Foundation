@@ -6,16 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-jack = Employee.create!(first_name: 'David', last_name: 'Hunter', title: 'B', email: 'david@admin', password: 'password', password_confirmation: 'testing') 
-Employee.create!(first_name: '123', last_name: '321', title: '0', email: '123@123', password: '123123', password_confirmation: '123123') 
+Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 'admin@example.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!')
+jack = Employee.create!(first_name: 'jackie', last_name: 'lai', title: 'B', email: 'jack@q', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+Employee.create!(first_name: '123', last_name: '321', title: '0', email: '123@123', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
 
-Employee.create!(first_name: 'mathieu', last_name: 'houde', title: 'engineer', email: 'mathieu.houde@codeboxx.biz', password: '123456', password_confirmation: '123456') 
-Employee.create!(first_name: 'patrick', last_name: 'thibault', title: 'coach', email: 'tiboclan@gmail.com', password: '123456', password_confirmation: '123456') 
-Employee.create!(first_name: 'philippe', last_name: 'motillon', title: 'coach', email: 'philippe.motillon@keyrus.ca', password: '123456', password_confirmation: '123456') 
-Employee.create!(first_name: 'khalid', last_name: 'djado', title: 'coach', email: 'kdjado@gmail.com', password: '123456', password_confirmation: '123456') 
-Employee.create!(first_name: 'antoine', last_name: 'deblonde', title: 'coach', email: 'antoine.deblonde@keyrus.ca', password: '123456', password_confirmation: '123456') 
-Employee.create!(first_name: 'ibrahim', last_name: 'mahamane', title: 'coach', email: 'imahamaneissa@gmail.com', password: '123456', password_confirmation: '123456') 
+#Intervention.create( author_id: '1', customer_id: '2', building_id: '3', battery_id: '202', column_id: '309', elevator_id: '101', employee_id: '6680', result:'bon', report: 'correct', status: 'encours')
+Intervention.create!(author: '100', customer_id: '3', building_id: '5', battery_id: '6', column_id: '70', elevator_id: '11', employee_id: '22', result: 'first result', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '101', customer_id: '4', building_id: '6', battery_id: '5', column_id: '71', elevator_id: '12', employee_id: '23', result: 'second result', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '102', customer_id: '5', building_id: '7', battery_id: '3', column_id: '72', elevator_id: '13', employee_id: '24', result: 'third result', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '103', customer_id: '6', building_id: '8', battery_id: '2', column_id: '73', elevator_id: '13', employee_id: '25', result: 'string', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
+
+Employee.create!(first_name: 'mathieu', last_name: 'houde', title: 'engineer', email: 'mathieu.houde@codeboxx.biz', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+Employee.create!(first_name: 'patrick', last_name: 'thibault', title: 'coach', email: 'tiboclan@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+Employee.create!(first_name: 'philippe', last_name: 'motillon', title: 'coach', email: 'philippe.motillon@keyrus.ca', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+Employee.create!(first_name: 'khalid', last_name: 'djado', title: 'coach', email: 'kdjado@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+Employee.create!(first_name: 'antoine', last_name: 'deblonde', title: 'coach', email: 'antoine.deblonde@keyrus.ca', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+Employee.create!(first_name: 'ibrahim', last_name: 'mahamane', title: 'coach', email: 'imahamaneissa@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+Employee.create!(first_name: 'Jorge', last_name: 'Chavarriaga', title: 'Owner', email: 'jorge.chavarriaga@chavazystem.tech', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
 
 
 

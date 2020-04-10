@@ -4,8 +4,8 @@ namespace :transfer do   #---rake transfer: data---#
     desc "export to postgresql"
     task data: :environment do
        
-        #Ukeme's CodeBoxx Server
-        connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname:"ukemeekpenyong", user: "codeboxx", password: "Codeboxx1!")
+        #JorgeChavarriaga dB CodeBoxx Server
+        connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname:"JorgeChavarriaga", user: "codeboxx", password: "Codeboxx1!")
         # prepares all the queries
         connected.prepare('to_fact_intervention', "INSERT INTO \"fact_intervention\" (elevator_id, column_id, battery_id, employee_id, building_id, start_date_time, result, status) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)")
         
@@ -57,19 +57,6 @@ namespace :transfer do   #---rake transfer: data---#
             connected.exec_prepared('to_dim_customers', [customer.created_at, customer.company_name, customer.name_company_contact, customer.contact_email, nb_elevators, customer.address.city])
         end
     end
-
-    # desc "create my database"
-    # task init: :environment do
-    #     puts "hi"
-    #     connected = PG::Connection.open(host: "codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com", port: "5432", dbname: 'postgres', user: "codeboxx", password: "Codeboxx1!")
-    #     puts connected
-    #     connected.exec("CREATE DATABASE JackieLai")
-    # end
-
-    # desc "test"
-    # task data: :environment do
-    #     #ici maria :)
-    # end
 end
 
 

@@ -31,26 +31,17 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Geolocation" do
+        panel "CodeBoxx" do
           div do
             br
             text_node %{<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3133.7047703786026!2d-73.56930918423099!3d45.45941077910087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91067ae856153%3A0x5ba73b190d3e61d2!2s4468%20Wellington%20St%2C%20Verdun%2C%20QC%20H4G%202G4!5e1!3m2!1ses!2sca!4v1580323335394!5m2!1ses!2sca"
-            width="425" height="450" scrolling="no" frameborder="15">
+            width="650" height="410" scrolling="no" frameborder="15">
     </iframe>}.html_safe
           end
         end
       end      
 
-      column do
-        panel "Anna Chowattanakul - David Hunter - Ukeme Ekpenyong - Younes Bekkali orge Chavarriaga" do
-          div do
-            br
-            text_node %{<iframe src="https://www.dropbox.com/s/rdw10q1ed7nwxhh/team_dashboard.jpg?raw=1"
-            width="430" height="430" scrolling="yes" frameborder="15">
-    </iframe>}.html_safe
-          end
-        end
-      end
+      
       
     end 
   
@@ -60,7 +51,7 @@ ActiveAdmin.register_page "Dashboard" do
           div do
             br
             text_node %{<iframe src="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
-            width="1400" height="650" scrolling="no" frameborder="15">
+            width="1400" height="650" scrolling="no" frameborder="10">
     </iframe>}.html_safe
           end
         end

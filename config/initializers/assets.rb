@@ -16,6 +16,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
 Rails.application.config.assets.precompile += %w( admin.css )
 Rails.application.config.assets.precompile += %w( essentials.css )
 Rails.application.config.assets.precompile += %w( layout.css )
@@ -31,6 +32,7 @@ Rails.application.config.assets.precompile += %w( scripts.js )
 Rails.application.config.assets.precompile += %w( calculator.js )
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.tools.min.js )
 Rails.application.config.assets.precompile += %w( plugins/slider.revolution/js/jquery.themepunch.revolution.min.js )
+Rails.application.config.assets.precompile += %w( intervention.js )
 
 #reda add that
 Rails.application.config.assets.precompile += %w( demo.revolution_slider.js )

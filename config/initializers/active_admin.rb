@@ -250,7 +250,17 @@ ActiveAdmin.setup do |config|
     #
     config.namespace :admin do |admin|
       admin.build_menu :default do |menu|
-        menu.add label: "Customers geolocalisation", url: "/geolocation/google", html_options: { target: :blank }
+        menu.add label: "Customers geolocalisation", url: "http://www.chavazystem.tech/geolocation/google", html_options: { target: :blank }
+        #menu.add label: "Customers geolocalisation", url: "/geolocation/google", html_options: { target: :blank }
+      end
+    end
+
+   
+    
+    config.namespace :admin do |admin|
+      admin.build_menu :default do |menu|
+        menu.add label: "Interventions", url: "/interventions", html_options: { target: :blank }
+        #menu.add label: "Customers geolocalisation", url: "/geolocation/google", html_options: { target: :blank }
       end
     end
 

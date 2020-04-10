@@ -16,6 +16,7 @@ class LeadsController < ApplicationController
     #@lead.attached_file = lead_params['attached_file'].read
 
     #Create ticket on Zendesk from Contact Form
+    # @lead para llamar desde lead
     ZendeskAPI::Ticket.create!(@client, 
       :subject => "#{@lead.full_name} from #{@lead.company_name}",
       :requester => {"name": @lead.full_name}, 
