@@ -82,7 +82,7 @@ $("#building").change(function() {
   });
 });
 
-// Show and hide columns for battery X
+// Show and hide columns for battery
 $("#battery").change(function() {
   var battery = $(this).val();
   if (battery == "") {

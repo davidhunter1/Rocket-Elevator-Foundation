@@ -75,13 +75,11 @@ class InterventionsController < ApplicationController
     # end
   
     # GET /interventions/new
-    def new
+        def new
       @intervention = Intervention.new
     end
   
-    # GET /interventions/1/edit
-    # def edit
-    # end
+    
     
 
     # The create method contains the variable declarations used in the Zendesk API, and the controller actions after
@@ -91,10 +89,10 @@ class InterventionsController < ApplicationController
       @intervention = Intervention.new(intervention_params)
 
         # Variables needed and used in the Zendesk API message
-        @intervention.author = current_employee
-        # author_firstname = current_employee_id
-        # author_lastname = current_employee.last_name
-        # @customer_company = Customer.find(params[:column]).company_name
+        @intervention.author = current_employee.id
+        author_firstname = current_employee.first_name
+        author_lastname = current_employee.last_name
+        @customer_company = Customer.find(params[:customer]).company_name
 
         # Rule to avoid an error message if no employee is selected
         if @intervention.employee_id != nil
@@ -106,79 +104,55 @@ class InterventionsController < ApplicationController
           added_details = ""
         end
 
-        #intervention
+        # Content from the intervention form
         @intervention.employee_id = params[:employee]
         @intervention.customer_id = params[:customer]
         @intervention.building_id = params[:building]
         @intervention.battery_id = params[:battery]
         @intervention.column_id = params[:column]
         @intervention.elevator_id = params[:elevator]
-        @intervention.result = "Incomplete"
+        @intervention.result = "Incomplete"  #  Default value
         @intervention.report = params[:report]
-        @intervention.status = "Pending"
+        @intervention.status = "Pending"   # Default value
       
-    #==================================== Zendesk API session =============================================#  
+      #  Zendesk API  
       # Create a personalized ticket 
-    #   API::Ticket.create!(@client, 
-    #     :subject => "Intervention ticket from employee ##{@intervention.author} - #{author_firstname} #{author_lastname} - Rocket Elevators",
-    #     :requester => {"name": @current_employee.email},
-    #     :comment => { :value => "Employee #{@intervention.author} hello working for customer #{@intervention.customer_id} (#{@customer_company}) on building  #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id} and elevator #{@intervention.elevator_id} has dispatched an employee (#{@intervention.employee_id}) to answer the present ticket.
-    #     *** An element with no value after a '#' means no specific element has been selected on the form ***
-    #     Here is a description of the intervention to be made : 
-    #     #{@intervention.report}  
-    #     #{added_details}
-    #     "}, 
-    #     :submitter_id => @intervention.author,
-    #     :type => "problem",
-    #     :priority => "urgent")
-    #==================================== END  API session =========================================# 
+      ZendeskAPI::Ticket.create!(@client, 
+        :subject => "Intervention ticket from #{@intervention.author} #{author_firstname} #{author_lastname} of Rocket Elevators",
+        :requester => {"name": @current_employee.email},
+        :comment => { :value => " #{author_firstname} #{author_lastname}, (Employee #{@intervention.author})'s work for customer #{@intervention.customer_id} (#{@customer_company}) on building  #{@intervention.building_id}, battery #{@intervention.battery_id}, column #{@intervention.column_id} and elevator #{@intervention.elevator_id} has dispatched an employee (#{@intervention.employee_id}) to answer the present ticket.
+        Here is the report of the intervention : 
+        #{@intervention.report}  
+        #{added_details}
+        "}, 
+        :submitter_id => @intervention.author,
+        :type => "problem",
+        :priority => "urgent")
+        
+    #END Zendesk API session 
   
       respond_to do |format|
         if @intervention.save!
-          format.html { redirect_to "/index" }
+          format.html { redirect_to "/interventions" }
           format.json { render :show, status: :created, location: @intervention }
           p @intervention
-          p "coucou"
+          p "Intervention form sent"
         else
           format.html { redirect_to "/interventions" }
           format.json { render json: @intervention.errors, status: :unprocessable_entity }
-          p "wo menute"
+          p "error"
         end
       end
     end
   
-    # PATCH/PUT /interventions/1.json
-    # def update
-    #   respond_to do |format|
-    #     if @intervention.update(intervention_params)
-    #       format.html { redirect_to "/interventions" }
-    #       # format.html { redirect_to quotes_url}
-    #       format.json { render :show, status: :ok, location: @intervention }
-    #     else
-    #       format.html { render :edit }
-    #       format.json { render json: @intervention.errors, status: :unprocessable_entity }
-    #     end
-    #   end
-    # end
+   
   
-    # DELETE /interventions/1.json
-    # def destroy
-    #   @intervention.destroy
-    #   respond_to do |format|
-    #     format.html { redirect_to "/interventions" }
-    #     format.json { head :no_content }
-    #   end
-    # end
+   
   
-    # private
-    #   # Use callbacks to share common setup or constraints between actions.
-    #   def set_intervention
-    #     @intervention = Intervention.find(params[:id])
-    #   end
+   
   
-      # Never trust parameters from the scary internet, only allow the white list through.
+      
       def intervention_params
         params.permit( :employee_id, :customer_id, :building_id, :battery_id, :column_id, :elevator_id, :result, :report, :status)
       end
   end
-  
