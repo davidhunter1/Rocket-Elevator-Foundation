@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+#Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 # Employee.create!(first_name: 'admin', last_name: 'istrator', title: 'A', email: 'admin@example.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!')
-# david = Employee.create!(first_name: 'david', last_name: 'hunter', title: 'C', email: 'dave@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-jack = Employee.create!(first_name: 'jackie', last_name: 'lai', title: 'B', email: 'jack@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+david = Employee.create!(first_name: 'david', last_name: 'hunter', title: 'C', email: 'dave@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
+#jack = Employee.create!(first_name: 'jackie', last_name: 'lai', title: 'B', email: 'jack@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
 # Employee.create!(first_name: '123', last_name: '321', title: '0', email: '123@123', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
 
 #Intervention.create( author_id: '1', customer_id: '2', building_id: '3', battery_id: '202', column_id: '309', elevator_id: '101', employee_id: '6680', result:'bon', report: 'correct', status: 'encours')
