@@ -13,3 +13,4 @@ class CreateActiveAdminComments < ActiveRecord::Migration[5.2]
     def self.down
       drop_table :active_admin_comments
     end
+  end
