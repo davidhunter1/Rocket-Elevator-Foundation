@@ -14,7 +14,7 @@ def initialize
   # Choose one of the following depending on your authentication choice
   config.token = ENV["ZENDESK_API_TOKEN"]
   
-
+ 
   # OAuth Authentication
   #config.access_token = "your OAuth access token"
 
@@ -56,4 +56,4 @@ end
       #The Contact uploaded an attachment
      # " },  
      # :priority => "urgent")
-end
+ end
