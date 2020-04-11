@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+  
+  config.action_controller.allow_forgery_protection = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
