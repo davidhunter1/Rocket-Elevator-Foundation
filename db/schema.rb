@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_171141) do
+ActiveRecord::Schema.define(version: 2020_04_11_054630) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_171141) do
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.timestamp "customer_create_date", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.timestamp "customer_create_date", null: false
     t.string "company_name", null: false
     t.string "name_company_contact", null: false
     t.string "company_phone"
@@ -132,18 +132,20 @@ ActiveRecord::Schema.define(version: 2020_03_12_171141) do
   end
 
   create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "author"
-    t.bigint "building_id", null: false
-    t.bigint "customer_id", null: false
-    t.bigint "battery_id"
-    t.bigint "column_id"
-    t.bigint "elevator_id"
-    t.string "employee_id"
+    t.integer "author", null: false
+    t.integer "customer_id", null: false
+    t.integer "building_id", null: false
+    t.integer "battery_id"
+    t.integer "column_id"
+    t.integer "elevator_id"
+    t.integer "employee_id"
+    t.timestamp "start_intervention"
+    t.timestamp "end_intervention"
     t.string "result"
-    t.string "status"
     t.string "report"
-    t.datetime "start_intervention"
-    t.datetime "end_intervention"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -162,7 +164,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_171141) do
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "Full_Name"
-    t.string "Phone_Number"
+    t.integer "Phone_Number"
     t.string "Company_Name"
     t.string "Email"
     t.string "Building_Type"
