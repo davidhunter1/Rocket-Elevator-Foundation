@@ -12,11 +12,14 @@ david = Employee.create!(first_name: 'david', last_name: 'hunter', title: 'C', e
 # Employee.create!(first_name: '123', last_name: '321', title: '0', email: '123@123', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
 
 #Intervention.create( author_id: '1', customer_id: '2', building_id: '3', battery_id: '202', column_id: '309', elevator_id: '101', employee_id: '6680', result:'bon', report: 'correct', status: 'encours')
-Intervention.create!(author: '100', customer_id: '3', building_id: '5', battery_id: '6', column_id: '70', elevator_id: '11', employee_id: '22', result: 'first result', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
-Intervention.create!(author: '101', customer_id: '4', building_id: '6', battery_id: '5', column_id: '71', elevator_id: '12', employee_id: '23', result: 'second result', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
-Intervention.create!(author: '102', customer_id: '5', building_id: '7', battery_id: '3', column_id: '72', elevator_id: '13', employee_id: '24', result: 'third result', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
-Intervention.create!(author: '103', customer_id: '6', building_id: '8', battery_id: '2', column_id: '73', elevator_id: '13', employee_id: '25', result: 'string', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
-
+Intervention.create!(author: '100', customer_id: '3', building_id: '5', battery_id: '6', column_id: '70', elevator_id: '11', employee_id: '22', result: 'first result', report: 'string', status: 'pending', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '101', customer_id: '4', building_id: '6', battery_id: '5', column_id: '71', elevator_id: '12', employee_id: '23', result: 'second result', report: 'string', status: 'pending', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '102', customer_id: '5', building_id: '7', battery_id: '3', column_id: '72', elevator_id: '13', employee_id: '24', result: 'third result', report: 'string', status: 'active', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '103', customer_id: '6', building_id: '8', battery_id: '2', column_id: '53', elevator_id: '23', employee_id: '25', result: 'string', report: 'string', status: 'inactive', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '104', customer_id: '7', building_id: '9', battery_id: '7', column_id: '60', elevator_id: '21', employee_id: '22', result: 'first result', report: 'string', status: 'pending', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '104', customer_id: '8', building_id: '10', battery_id: '8', column_id: '61', elevator_id: '22', employee_id: '23', result: 'second result', report: 'string', status: 'pending', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '106', customer_id: '9', building_id: '11', battery_id: '9', column_id: '62', elevator_id: '33', employee_id: '24', result: 'third result', report: 'string', status: 'active', start_intervention: 'null', end_intervention: 'null')
+Intervention.create!(author: '107', customer_id: '10', building_id: '12', battery_id: '1', column_id: '63', elevator_id: '33', employee_id: '25', result: 'string', report: 'string', status: 'inactive', start_intervention: 'null', end_intervention: 'null')
 # w
 require 'faker'
 require 'date'
