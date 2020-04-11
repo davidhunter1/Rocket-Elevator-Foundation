@@ -114,4 +114,3 @@ gem 'bcrypt_pbkdf'
 
 
 gem "zendesk_api", git: 'https://github.com/zendesk/zendesk_api_client_rb'
-
