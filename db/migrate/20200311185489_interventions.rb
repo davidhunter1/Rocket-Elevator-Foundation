@@ -2,8 +2,8 @@ class Interventions < ActiveRecord::Migration[5.2]
     def self.up
       create_table :interventions do |t|
         t.bigint :author, null: false
-        t.bigint :building_id, null: false
-        t.bigint :customer_id, null: false
+        t.bigint :building_id, null: => false
+        t.bigint :customer_id, null: => false
         t.bigint :battery_id
         t.bigint :column_id
         t.bigint :elevator_id

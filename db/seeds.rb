@@ -17,16 +17,7 @@ Intervention.create!(author: '101', customer_id: '4', building_id: '6', battery_
 Intervention.create!(author: '102', customer_id: '5', building_id: '7', battery_id: '3', column_id: '72', elevator_id: '13', employee_id: '24', result: 'third result', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
 Intervention.create!(author: '103', customer_id: '6', building_id: '8', battery_id: '2', column_id: '73', elevator_id: '13', employee_id: '25', result: 'string', report: 'string', status: 'string', start_intervention: 'null', end_intervention: 'null')
 
-Employee.create!(first_name: 'mathieu', last_name: 'houde', title: 'engineer', email: 'mathieu.houde@codeboxx.biz', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-Employee.create!(first_name: 'patrick', last_name: 'thibault', title: 'coach', email: 'tiboclan@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-Employee.create!(first_name: 'philippe', last_name: 'motillon', title: 'coach', email: 'philippe.motillon@keyrus.ca', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-Employee.create!(first_name: 'khalid', last_name: 'djado', title: 'coach', email: 'kdjado@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-Employee.create!(first_name: 'antoine', last_name: 'deblonde', title: 'coach', email: 'antoine.deblonde@keyrus.ca', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-Employee.create!(first_name: 'ibrahim', last_name: 'mahamane', title: 'coach', email: 'imahamaneissa@gmail.com', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-Employee.create!(first_name: 'Jorge', last_name: 'Chavarriaga', title: 'Owner', email: 'jorge.chavarriaga@chavazystem.tech', password: 'Codeboxx1!', password_confirmation: 'Codeboxx1!') 
-
-
-
+# w
 require 'faker'
 require 'date'
 
