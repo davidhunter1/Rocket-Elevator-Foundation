@@ -92,7 +92,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'test'
 
-# Figaro for hidding the Keys
+# Figaro for hiding the Keys
 gem 'figaro'
 
 # Twilio for SMS

@@ -108,6 +108,7 @@ class InterventionsController < ApplicationController
       @intervention.result = "Incomplete"  #  Default value
       @intervention.report = params[:report]
       @intervention.status = "Pending"   # Default value
+      @intervention.author = "none"
 
   
     
