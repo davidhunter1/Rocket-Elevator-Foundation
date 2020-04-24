@@ -1,3 +1,4 @@
+require 'ElevatorMedia/streamer.rb'
 require 'rails_helper'
 require 'spec_helper'
 
