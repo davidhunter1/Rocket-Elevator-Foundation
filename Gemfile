@@ -82,9 +82,6 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
-  gem 'rvm1-capistrano3', require: false
-  gem 'capistrano-rake', require: false
-  gem 'capistrano-ssh-doctor', '~> 1.0'
 end
 
 group :test do
