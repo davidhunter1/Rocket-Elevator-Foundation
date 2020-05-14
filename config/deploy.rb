@@ -1,16 +1,16 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.13.0"
+lock "~> 3.14.0"
 
-set :application, 'dphelevator'
-set :repo_url, 'https://github.com/davidhunter1/Rocket-Elevator-Foundation.git' # Edit this to match your repository
+set :application, 'davidelevator'
+set :repo_url, 'https://github.com/davidhunter1/Rocket-Elevator-Foundation' # Edit this to match your repository
 set :branch, :master
-set :deploy_to, '/home/deploy/urlshortner'
+set :deploy_to, '/home/deploy/davidelevator'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :rvm_type, :user
-set :rvm_ruby_version, 'ruby 2.6.5p114' # Edit this if you are using MRI Ruby
+set :rvm_ruby_version, 'ruby 2.6.5' # Edit this if you are using MRI Ruby
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
@@ -27,10 +27,14 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
 
-before 'deploy', 'rvm1:install:ruby'
-set :rvm_map_bins, [ 'rake', 'gem', 'bundle', 'ruby', 'puma', 'pumactl' ]
-set :application, "David_Hunter"
-set :repo_url, "https://github.com/davidhunter1/Rocket-Elevator-Foundation.git"
+
+
+
+
+# before 'deploy', 'rvm1:install:ruby'
+# set :rvm_map_bins, [ 'rake', 'gem', 'bundle', 'ruby', 'puma', 'pumactl' ]
+# set :application, "dphelevator"
+# set :repo_url, "https://github.com/davidhunter1/Rocket-Elevator-Foundation"
 # Changed for the Foundation with my git and app
 # set :application, "Ukeme"
 # set :repo_url, "https://github.com/kembasy/Rocket_Elevators_API"
@@ -69,15 +73,15 @@ set :repo_url, "https://github.com/davidhunter1/Rocket-Elevator-Foundation.git"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-before "deploy:assets:precompile", "deploy:yarn_install"
+# before "deploy:assets:precompile", "deploy:yarn_install"
  
-namespace :deploy do
- desc 'Run rake yarn:install'
- task :yarn_install do
-   on roles(:web) do
-     within release_path do
-       execute("cd #{release_path} && yarn install")
-     end
-   end
- end
-end
+# namespace :deploy do
+#  desc 'Run rake yarn:install'
+#  task :yarn_install do
+#    on roles(:web) do
+#      within release_path do
+#        execute("cd #{release_path} && yarn install")
+#      end
+#    end
+#  end
+# end

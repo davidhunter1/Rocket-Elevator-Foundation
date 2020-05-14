@@ -84,6 +84,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'rvm1-capistrano3', require: false
   gem 'capistrano-rake', require: false
+  gem 'capistrano-ssh-doctor', '~> 1.0'
 end
 
 group :test do

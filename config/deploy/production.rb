@@ -3,31 +3,23 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "99.79.123.96", user: "ubuntu", roles: %w{app db web}
-# server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-# server "db.example.com", user: "deploy", roles: %w{db}
-app = ENV['APP']
-if app.nil? or app.empty?
-  app = "David_Hunter" 
-end
-set :application, app
-set :rails_env, "development"
-set :bundle_without, "production"
-set :deploy_to, "/home/ubuntu/apps/#{app}"
-set :linked_dirs, %w{tmp/pids tmp/sockets log}
-set :linked_files, %w{config/database.yml config/application.yml}
+# server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
+# server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
+# server 'db.example.com', user: 'deploy', roles: %w{db}
+
+
 
 # role-based syntax
 # ==================
 
 # Defines a role with one or multiple servers. The primary server in each
-# group is considered to be the first unless any hosts have the primary
+# group is considered to be the first unless any  hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{ubuntu@99.79.123.96}
-role :web, %w{ubuntu@99.79.123.96}
-role :db,  %w{ubuntu@99.79.123.96}
+# role :app, %w{3.86.197.159}, 
+# role :web, %w{3.86.197.159}, 
+# role :db,  %w{3.86.197.159}
 
 
 
@@ -57,13 +49,15 @@ role :db,  %w{ubuntu@99.79.123.96}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-# server "example.com",
-#   user: "user_name",
+# server 'example.com',
+#   user: 'user_name',
 #   roles: %w{web app},
 #   ssh_options: {
-#     user: "user_name", # overrides user setting above
+#     user: 'user_name', # overrides user setting above
 #     keys: %w(/home/user_name/.ssh/id_rsa),
 #     forward_agent: false,
 #     auth_methods: %w(publickey password)
-#     # password: "please use keys"
+#     # password: 'please use keys'
 #   }
+
+server '3.86.197.159', user: 'deploy', roles: %w{web app db}
