@@ -111,6 +111,7 @@ gem 'gmaps4rails'
 gem 'webmock'
 
 
+gem 'newrelic_rpm'
 
 
 

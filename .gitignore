@@ -65,8 +65,7 @@ yarn-debug.log*
 # Ignore Watson
 
 ibm-credentials.env
-<<<<<<< HEAD:.gitignore
-=======
 /vendor/cache/*
 /tmp/cache/*
->>>>>>> master:.gitignore
+
+newrelic.yml
