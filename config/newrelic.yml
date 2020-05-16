@@ -1,0 +1,21 @@
+common: &default_settings
+  license_key: 75b2750358dd9f85a9f8de2e43e171eae57bNRAL
+  app_name: Rocket Elevators
+  # agent_enabled: false
+  log_level: info
+
+# Environment-specific settings are in this section.
+development:
+  <<: *default_settings
+  monitor_mode: true
+
+test:
+  <<: *default_settings
+  monitor_mode: false
+
+staging:
+  <<: *default_settings
+  app_name: Rocket Elevators (Staging)
+
+production:
+  <<: *default_settings
