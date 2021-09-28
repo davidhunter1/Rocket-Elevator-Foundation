@@ -10,7 +10,6 @@ GIT
       multipart-post (~> 2.0)
 
 GEM
-  remote: https://rubygems.org/
   remote: http://rails-assets.org/
   specs:
     actioncable (5.2.4.2)
@@ -130,7 +129,6 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.6)
-    date (3.0.0)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -224,7 +222,6 @@ GEM
     mime-types (2.99.3)
     mimemagic (0.3.4)
     mini_mime (1.0.2)
-    mini_portile2 (2.4.0)
     minitest (5.14.0)
     mixitup-rails (3.3.1)
       railties (>= 3.1)
@@ -238,8 +235,6 @@ GEM
     net-ssh (6.0.2)
     newrelic_rpm (6.10.0.364)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
-      mini_portile2 (~> 2.4.0)
     oauth2 (1.4.4)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -376,6 +371,16 @@ GEM
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    date (3.0.0)
+    mini_portile2 (2.6.1)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
+      racc (~> 1.4)
+    racc (1.5.2)
 
 PLATFORMS
   ruby
